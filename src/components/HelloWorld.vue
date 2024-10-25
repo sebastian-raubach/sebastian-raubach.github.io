@@ -21,21 +21,21 @@
         <v-col cols="12">
           <v-card
             class="py-4"
-            color="primary"
             rounded="lg"
-            variant="tonal"
           >
             <div class="d-flex flex-column flex-sm-row flex-no-wrap justify-space-between align-center align-sm-start">
               <div class="order-1 order-sm-0">
-                <v-card-item :prepend-icon="mdiRocketLaunchOutline">
-                  <v-card-title class="text-h5">
+                <v-card-item>
+                  <template #prepend>
+                    <v-icon class="text-primary" :icon="mdiRocketLaunchOutline" />
+                  </template>
+                  <v-card-title class="text-h5 text-primary">
                     Welcome
                   </v-card-title>
-
-                  <v-card-subtitle class="text-wrap">
-                    Thanks for visiting my home page. Have a look around to see the kind of work I do both professionally and as a hobby.
-                  </v-card-subtitle>
                 </v-card-item>
+                <v-card-text class="text-wrap">
+                  Thanks for visiting my home page. Have a look around to see the kind of work I do both professionally and as a hobby.
+                </v-card-text>
               </div>
               <v-avatar class="ma-3 order-0 order-sm-1" image="/img/sebastian.jpg" size="160" />
             </div>

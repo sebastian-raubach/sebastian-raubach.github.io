@@ -158,7 +158,7 @@
   }, {
     name: 'Frickl',
     description: 'Self-hosted photo library',
-    categories: ['private', 'app', 'database', 'photo', 'library'],
+    categories: ['hobby', 'app', 'database', 'photo', 'library'],
     website: 'https://sebastian-raubach.github.io/frickl-web/',
     repository: 'https://github.com/sebastian-raubach/frickl-web',
     logo: 'frickl.svg',
@@ -166,7 +166,7 @@
   }, {
     name: 'UNICON',
     description: 'Universal unit converter',
-    categories: ['private', 'app', 'pwa'],
+    categories: ['hobby', 'app', 'pwa'],
     website: 'https://unicon.pages.dev/',
     repository: 'https://github.com/sebastian-raubach/unicon',
     logo: 'unicon.svg',
@@ -174,7 +174,7 @@
   }, {
     name: 'ClosestHillMap',
     description: 'Map interactively showing the closest x locations to a position on the map',
-    categories: ['private', 'app', 'pwa', 'geography'],
+    categories: ['hobby', 'app', 'pwa', 'geography'],
     website: 'https://sebastian-raubach.github.io/closest-hill-map/',
     repository: 'https://github.com/sebastian-raubach/closest-hill-map',
     logo: 'chm.svg',
@@ -182,7 +182,7 @@
   }, {
     name: 'SGUD',
     description: 'A tool to rate anything, coffee, beers, parking spaces',
-    categories: ['private', 'app', 'rating'],
+    categories: ['hobby', 'app', 'rating'],
     website: undefined,
     repository: 'https://github.com/sebastian-raubach/sgud-client',
     logo: 'sgud.svg',
@@ -190,7 +190,7 @@
   }, {
     name: 'HikeTime',
     description: 'Hike time estimator based on flat walking speed and climbing speed',
-    categories: ['private', 'app', 'pwa', 'hiking'],
+    categories: ['hobby', 'app', 'pwa', 'hiking'],
     website: 'https://sebastian-raubach.github.io/hiketime/',
     repository: 'https://github.com/sebastian-raubach/hiketime',
     logo: 'hiketime.svg',
@@ -198,7 +198,7 @@
   }, {
     name: 'WeatherMatrix',
     description: 'Tool to display weather data on an LED matrix',
-    categories: ['private', 'led-matrix', 'raspberry-pi'],
+    categories: ['hobby', 'led-matrix', 'raspberry-pi'],
     website: undefined,
     repository: 'https://github.com/sebastian-raubach/rpi-led-weather/',
     logo: 'weathermatrix.svg',
