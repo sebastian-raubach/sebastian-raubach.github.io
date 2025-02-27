@@ -51,6 +51,11 @@
   }
 
   const publications = ref<Publication[]>([{
+    title: 'Boosting photosynthesis opens new opportunities for agriculture sustainability and circular economy: The BEST-CROP research and innovation action',
+    year: 2025,
+    citation: 'Pesaresi, P., Bono, P., Corn, S., et al. (2025), Boosting photosynthesis opens new opportunities for agriculture sustainability and circular economy: The BEST-CROP research and innovation action. <o>Plant J</i> 2025; <b>121</b>.',
+    doi: 'https://doi.org/10.1111/tpj.17264',
+  }, {
     title: 'Towards smart and sustainable development of modern berry cultivars in Europe',
     year: 2022,
     citation: 'Senger, E., Osorio, S., Olbricht, K., et al. (2022), Towards smart and sustainable development of modern berry cultivars in Europe. <i>Plant J</i> 2022; <b>111</b>: 1238-1251.',
