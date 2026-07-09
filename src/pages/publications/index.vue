@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1 class="text-h4">Publications</h1>
+    <h1 class="text-headline-large">Publications</h1>
     <v-divider class="my-4" />
 
     <v-responsive
@@ -12,6 +12,7 @@
           v-for="year in byYear"
           :key="`timeline-year-${year.year}`"
           size="small"
+          class="w-100"
         >
           <template #opposite>
             <div
@@ -25,8 +26,8 @@
               :key="`timeline-year-${year.year}-pub-${pub.title}`"
               class="elevation-2 mb-3"
             >
-              <v-card-title class="text-h5 text-wrap">
-                {{ pub.title }}
+              <v-card-title class="text-headline-small text-wrap">
+                <span v-html="pub.title" />
               </v-card-title>
               <v-card-text v-html="pub.citation" class="text-wrap" />
               <v-card-text>
@@ -51,9 +52,29 @@
   }
 
   const publications = ref<Publication[]>([{
+    title: 'OzBarley: A genetic and phenotypic data resource capturing the Australian barley breeding history',
+    year: 2026,
+    citation: 'Baumann, U., Kalashyan, E., Schwerdt, J. et al. OzBarley: A genetic and phenotypic data resource capturing the Australian barley breeding history. <i>Sci Data</i> <b>13</b> 2026, 703.',
+    doi: 'https://doi.org/10.1038/s41597-026-07056-y',
+  }, {
+    title: 'Beyond the clipboard: data collection with GridScore NEXT',
+    year: 2025,
+    citation: 'Raubach, S., Schreiber, M., Hamilton, R. et al. Beyond the clipboard: data collection with GridScore NEXT. <i>BMC Bioinformatics</i> 2026; <b>27</b>, 44.',
+    doi: 'https://doi.org/10.1186/s12859-025-06352-5',
+  }, {
+    title: 'Germplasm Characterization and Evaluation',
+    year: 2025,
+    citation: 'Kumari, J. et al. (2025). Germplasm Characterization and Evaluation. In: Tripathi, K., Gupta, V., Krishnappa, G., Kumari, J., Singh, G.P. (eds) <i>Textbook of Plant Genetic Resources</i>. Springer.',
+    doi: 'https://doi.org/10.1007/978-981-96-5024-8_9',
+  }, {
+    title: 'DeltaBreed: A BrAPI-centric breeding data information system',
+    year: 2025,
+    citation: 'Yarnes, S.C., Palladino, N., Meidlinger, D.J., Philips, D.R., Sweeney, H.M., et al. (2025) DeltaBreed: A BrAPI-centric breeding data information system. <i>PLOS ONE</i> 2025; <b>20</b>.',
+    doi: 'https://doi.org/10.1371/journal.pone.0324104',
+  }, {
     title: 'Boosting photosynthesis opens new opportunities for agriculture sustainability and circular economy: The BEST-CROP research and innovation action',
     year: 2025,
-    citation: 'Pesaresi, P., Bono, P., Corn, S., et al. (2025), Boosting photosynthesis opens new opportunities for agriculture sustainability and circular economy: The BEST-CROP research and innovation action. <o>Plant J</i> 2025; <b>121</b>.',
+    citation: 'Pesaresi, P., Bono, P., Corn, S., et al. (2025), Boosting photosynthesis opens new opportunities for agriculture sustainability and circular economy: The BEST-CROP research and innovation action. <i>Plant J</i> 2025; <b>121</b>.',
     doi: 'https://doi.org/10.1111/tpj.17264',
   }, {
     title: 'Towards smart and sustainable development of modern berry cultivars in Europe',
@@ -136,3 +157,9 @@
     })
   })
 </script>
+
+<style scoped>
+:deep(.v-timeline-item .v-timeline-item__body) {
+  width: 100%;
+}
+</style>

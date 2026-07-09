@@ -11,8 +11,8 @@
       />
 
       <div class="text-center">
-        <h1 class="text-h2 font-weight-bold"><span class="text-primary">Sebastian</span> <span class="text-secondary">Raubach</span></h1>
-        <div class="text-h5 font-weight-light mb-n1">Research Software Engineer</div>
+        <h1 class="text-display-large font-weight-bold"><span class="text-primary">Sebastian</span> <span class="text-secondary">Raubach</span></h1>
+        <div class="text-headline-small font-weight-light mb-n1">Research Software Engineer</div>
       </div>
 
       <div class="py-4" />
@@ -29,7 +29,7 @@
                   <template #prepend>
                     <v-icon class="text-primary" :icon="mdiRocketLaunchOutline" />
                   </template>
-                  <v-card-title class="text-h5 text-primary">
+                  <v-card-title class="text-headline-small text-primary">
                     Welcome
                   </v-card-title>
                 </v-card-item>

@@ -13,30 +13,13 @@
 
       <v-menu>
         <template #activator="{ props }">
-          <v-btn icon v-bind="props">
-            <v-icon>{{ mdiThemeLightDark }}</v-icon>
-          </v-btn>
+          <v-btn id="theme-button" :icon="mdiThemeLightDark" v-bind="props" />
         </template>
         <v-list>
           <v-list-subheader class="text-high-emphasis text-uppercase font-weight-black">Theme</v-list-subheader>
-          <v-list-item :active="store.theme === 'light'" @click="store.setTheme('light')">
-            <template #prepend>
-              <v-icon>{{ mdiWhiteBalanceSunny }}</v-icon>
-            </template>
-            <v-list-item-title>Light</v-list-item-title>
-          </v-list-item>
-          <v-list-item :active="store.theme === 'dark'" @click="store.setTheme('dark')">
-            <template #prepend>
-              <v-icon>{{ mdiWeatherNight }}</v-icon>
-            </template>
-            <v-list-item-title>Dark</v-list-item-title>
-          </v-list-item>
-          <v-list-item :active="store.theme === 'system'" @click="store.setTheme('system')">
-            <template #prepend>
-              <v-icon>{{ mdiDesktopTowerMonitor }}</v-icon>
-            </template>
-            <v-list-item-title>System</v-list-item-title>
-          </v-list-item>
+          <v-list-item :prepend-icon="mdiWhiteBalanceSunny" :active="store.storeTheme === 'light'" @click="store.setTheme('light')" title="Light"><template #append><v-icon :icon="mdiCheck" v-if="store.storeTheme === 'light'" /></template></v-list-item>
+          <v-list-item :prepend-icon="mdiWeatherNight" :active="store.storeTheme === 'dark'" @click="store.setTheme('dark')" title="Dark"><template #append><v-icon :icon="mdiCheck" v-if="store.storeTheme === 'dark'" /></template></v-list-item>
+          <v-list-item :prepend-icon="mdiBrightnessAuto" :active="store.storeTheme === 'system'" @click="store.setTheme('system')" title="System"><template #append><v-icon :icon="mdiCheck" v-if="store.storeTheme === 'system'" /></template></v-list-item>
         </v-list>
       </v-menu>
     </v-app-bar>
@@ -61,38 +44,26 @@
 
 <script setup lang="ts">
   import { coreStore } from '@/stores/app'
-  import { ref, watch, watchEffect } from 'vue'
-  import { mdiDesktopTowerMonitor, mdiHome, mdiThemeLightDark, mdiWeatherNight, mdiWhiteBalanceSunny, mdiDeveloperBoard, mdiNewspaperVariantMultiple } from '@mdi/js'
+  import { ref, watchEffect } from 'vue'
+  import { mdiDesktopTowerMonitor, mdiHome, mdiThemeLightDark, mdiWeatherNight, mdiWhiteBalanceSunny, mdiDeveloperBoard, mdiNewspaperVariantMultiple, mdiBrightnessAuto, mdiCheck } from '@mdi/js'
   import { useTheme } from 'vuetify'
+  import { useDark } from '@vueuse/core'
 
   // Composition stuff
   const theme = useTheme()
   const store = coreStore()
   const router = useRouter()
+  const isDark = useDark()
 
   // Refs
-  const systemTheme = ref<string>('dark')
   const drawerVisible = ref<boolean>(false)
 
   // Listen for theme changes in the store
-  let media: MediaQueryList
-  watch(() => store.theme, (value: string) => {
-    if (value === 'system') {
-      // If currently system, get prefered scheme and listen to changes
-      media = window.matchMedia('(prefers-color-scheme: dark)')
-      media.addEventListener('change', onThemeChange)
-      onThemeChange()
-    } else if (media) {
-      // Else, remove listener
-      media.removeEventListener('change', onThemeChange)
-    }
-  }, { immediate: true })
-  function onThemeChange () {
-    systemTheme.value = media!.matches ? 'dark' : 'light'
-  }
-  // Listen for changes to the theme and update Vuetify global theme
   watchEffect(() => {
-    theme.global.name.value = store.theme === 'system' ? systemTheme.value : store.theme
+    const str = isDark.value ? 'dark' : 'light'
+    theme.setTransitionOrigin(document.querySelector('#theme-button'))
+    theme.change(store.storeTheme === 'system' ? str : store.storeTheme, true)
+    store.setSystemTheme(str)
   })
 </script>
 

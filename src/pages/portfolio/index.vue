@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1 class="text-h4">Portfolio</h1>
+    <h1 class="text-headline-large">Portfolio</h1>
     <v-divider class="my-4" />
 
     <h4>Categories</h4>
@@ -170,6 +170,14 @@
     website: 'https://unicon.pages.dev/',
     repository: 'https://github.com/sebastian-raubach/unicon',
     logo: 'unicon.svg',
+    show: false,
+  }, {
+    name: 'Fight against Blight',
+    description: '',
+    categories: ['work', 'app', 'database', 'disease'],
+    website: 'https://blight.hutton.ac.uk/',
+    repository: 'https://github.com/cropgeeks/fightagainstblight',
+    logo: 'fab.png',
     show: false,
   }, {
     name: 'ClosestHillMap',

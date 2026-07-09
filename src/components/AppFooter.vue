@@ -16,7 +16,7 @@
     </a>
 
     <div
-      class="text-caption"
+      class="text-body-small"
       style="position: absolute; right: 16px;"
     >
       &copy; {{ (new Date()).getFullYear() }} <span class="d-none d-sm-inline-block">Sebastian Raubach</span>
