@@ -45,7 +45,7 @@
 <script setup lang="ts">
   import { coreStore } from '@/stores/app'
   import { ref, watchEffect } from 'vue'
-  import { mdiDesktopTowerMonitor, mdiHome, mdiThemeLightDark, mdiWeatherNight, mdiWhiteBalanceSunny, mdiDeveloperBoard, mdiNewspaperVariantMultiple, mdiBrightnessAuto, mdiCheck } from '@mdi/js'
+  import { mdiHome, mdiThemeLightDark, mdiWeatherNight, mdiWhiteBalanceSunny, mdiDeveloperBoard, mdiNewspaperVariantMultiple, mdiBrightnessAuto, mdiCheck } from '@mdi/js'
   import { useTheme } from 'vuetify'
   import { useDark } from '@vueuse/core'
 
